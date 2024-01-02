@@ -67,8 +67,8 @@ export default function SettingsLayout({ children }: { children: ReactNode }) {
             <Nav.Item href="/t/settings">Overview</Nav.Item>
             <Nav.Item href="/t/settings/organization">Organization</Nav.Item>
             <Nav.Item href="/t/settings/members">Members</Nav.Item>
-            <Nav.Item href="/t/settings/members">Plans</Nav.Item>
-            <Nav.Item href="/t/settings/members">Billing</Nav.Item>
+            <Nav.Item href="/t/settings/plans">Plans</Nav.Item>
+            <Nav.Item href="/t/settings/billing">Billing</Nav.Item>
           </Nav.List>
         </Nav.Section>
         <Nav.Section>
@@ -99,7 +99,7 @@ export default function SettingsLayout({ children }: { children: ReactNode }) {
           </Nav.List>
         </Nav.Section>
       </Stack>
-      <Container maxW="5xl" className={css({ py: 3, flex: 1 })}>
+      <Container maxW="5xl" className={css({ py: 8, flex: 1 })}>
         {children}
       </Container>
     </Flex>
