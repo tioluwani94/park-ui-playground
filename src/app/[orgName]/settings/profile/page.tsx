@@ -5,10 +5,9 @@ import { VStack } from "styled-system/jsx/vstack";
 import * as Page from "~/components/settings/page";
 import { Button } from "~/components/ui/button";
 import { Card, CardBody } from "~/components/ui/card";
+import * as FileUpload from "~/components/ui/file-upload";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
-import * as FileUpload from "~/components/ui/file-upload";
-import { IconButton } from "~/components/ui/icon-button";
 
 export default function SettingsProfilePage() {
   const handleSaveDetails = async (formData: FormData) => {
