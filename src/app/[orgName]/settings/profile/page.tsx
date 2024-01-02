@@ -84,7 +84,9 @@ export default function SettingsProfilePage() {
                         type="email"
                       />
                     </VStack>
-                    <Button type="submit">Save</Button>
+                    <Button size="xs" type="submit">
+                      Save
+                    </Button>
                   </VStack>
                 </form>
               </VStack>

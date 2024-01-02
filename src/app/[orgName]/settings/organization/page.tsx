@@ -52,7 +52,9 @@ export default function SettingsOrganizationPage() {
                         type="email"
                       />
                     </VStack>
-                    <Button type="submit">Save</Button>
+                    <Button size="xs" type="submit">
+                      Save
+                    </Button>
                   </VStack>
                 </form>
               </VStack>
