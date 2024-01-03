@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Flex } from "styled-system/jsx/flex";
 import { HStack } from "styled-system/jsx/hstack";
 import { Stack } from "styled-system/jsx/stack";
@@ -16,58 +16,84 @@ import {
   MenuTrigger,
 } from "~/components/ui/menu";
 import { Text } from "~/components/ui/text";
+import { Member } from "~/types/index";
+import { RemoveMemberModal } from "./remove-member-modal";
 
-export const MemberItem = () => {
+export const MemberItem = (props: { member: Member }) => {
+  const [openChangeRoleModal, setOpenChangeRoleModal] = useState(false);
+  const [openRemoveMemberModal, setOpenRemoveMemberModal] = useState(false);
+
+  const { member } = props;
+  const { first_name, last_name, image, roles, email } = member;
+  const name = `${first_name} ${last_name}`;
+
   return (
-    <Flex w="100%" align="center" justify="space-between">
-      <HStack gap={6}>
-        <Avatar size="xs" />
-        <Stack gap={1}>
-          <Text textStyle="sm" fontWeight="bold">
-            Renata Alink
-          </Text>
-          <Text textStyle="sm" color="fg.muted">
-            hello@saas-ui.dev
-          </Text>
-        </Stack>
-      </HStack>
-      <HStack>
-        <HStack>
-          <Badge>owner</Badge>
-          <Badge>admin</Badge>
+    <>
+      <Flex w="100%" align="center" justify="space-between">
+        <HStack gap={6}>
+          <Avatar name={name} src={image ?? ""} />
+          <Stack gap={1}>
+            <Text textStyle="sm" fontWeight="bold">
+              {name}
+            </Text>
+            <Text textStyle="sm" color="fg.muted">
+              {email}
+            </Text>
+          </Stack>
         </HStack>
-        <Menu>
-          <MenuTrigger asChild>
-            <IconButton size="xs" variant="ghost" aria-label="more">
-              <svg
-                fill="none"
-                strokeWidth={1.5}
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
-                />
-              </svg>
-            </IconButton>
-          </MenuTrigger>
-          <MenuPositioner>
-            <MenuContent>
-              <MenuItemGroup id="group-1">
-                <MenuItem textStyle="xs" id="change-role" onClick={console.log}>
-                  Change role
-                </MenuItem>
-                <MenuItem textStyle="xs" id="remove-member">
-                  Remove member
-                </MenuItem>
-              </MenuItemGroup>
-            </MenuContent>
-          </MenuPositioner>
-        </Menu>
-      </HStack>
-    </Flex>
+        <HStack>
+          <HStack>
+            {roles?.map((role) => (
+              <Badge key={role}>{role}</Badge>
+            ))}
+          </HStack>
+          <Menu>
+            <MenuTrigger asChild>
+              <IconButton size="xs" variant="ghost" aria-label="more">
+                <svg
+                  fill="none"
+                  strokeWidth={1.5}
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+                  />
+                </svg>
+              </IconButton>
+            </MenuTrigger>
+            <MenuPositioner>
+              <MenuContent>
+                <MenuItemGroup id="group-1">
+                  <MenuItem
+                    textStyle="xs"
+                    id="change-role"
+                    onClick={() => setOpenRemoveMemberModal(true)}
+                  >
+                    Change role
+                  </MenuItem>
+                  <MenuItem
+                    textStyle="xs"
+                    id="remove-member"
+                    onClick={() => setOpenRemoveMemberModal(true)}
+                  >
+                    Remove member
+                  </MenuItem>
+                </MenuItemGroup>
+              </MenuContent>
+            </MenuPositioner>
+          </Menu>
+        </HStack>
+      </Flex>
+      {openRemoveMemberModal && (
+        <RemoveMemberModal
+          open={openRemoveMemberModal}
+          onOpenChange={(e: any) => setOpenRemoveMemberModal(e.open)}
+        />
+      )}
+    </>
   );
 };

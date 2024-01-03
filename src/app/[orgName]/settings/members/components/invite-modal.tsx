@@ -5,7 +5,7 @@ import { Stack } from "styled-system/jsx/stack";
 import { Button } from "~/components/ui/button";
 import { DialogCloseTrigger, DialogProps } from "~/components/ui/dialog";
 import { IconButton } from "~/components/ui/icon-button";
-import { Modal } from "~/components/ui/modal";
+import { Modal, ModalFooter } from "~/components/ui/modal";
 import * as TagsInput from "~/components/ui/tags-input";
 import * as Select from "~/components/ui/select";
 import { HStack } from "styled-system/jsx/hstack";
@@ -118,14 +118,14 @@ export const InviteModal = (props: DialogProps & { children: ReactNode }) => {
             </Select.Positioner>
           </Select.Root>
         </Stack>
-        <Stack gap="3" width="full" direction="row" justifyContent="flex-end">
+        <ModalFooter>
           <DialogCloseTrigger asChild>
             <Button size="xs" variant="ghost">
               Cancel
             </Button>
           </DialogCloseTrigger>
           <Button size="xs">Invite</Button>
-        </Stack>
+        </ModalFooter>
       </Modal>
     </>
   );

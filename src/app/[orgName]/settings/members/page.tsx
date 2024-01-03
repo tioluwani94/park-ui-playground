@@ -35,8 +35,24 @@ export default function SettingsMembersPage() {
                   <InviteButton />
                 </HStack>
                 <Stack w="100%" gap={8}>
-                  <MemberItem />
-                  <MemberItem />
+                  <MemberItem
+                    member={{
+                      id: "1",
+                      last_name: "Alink",
+                      first_name: "Renata",
+                      roles: ["owner", "admin"],
+                      email: "hello@saas-ui.dev",
+                    }}
+                  />
+                  <MemberItem
+                    member={{
+                      id: "2",
+                      first_name: "Davíð",
+                      last_name: "Ramos",
+                      email: "nonhlanhla.yoshida29@club-internet.info",
+                      roles: ["member"],
+                    }}
+                  />
                 </Stack>
               </VStack>
             </CardBody>
