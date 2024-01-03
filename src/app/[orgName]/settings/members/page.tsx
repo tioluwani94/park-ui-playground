@@ -7,6 +7,7 @@ import { Card, CardBody } from "~/components/ui/card";
 import { InviteButton } from "./components/invite-button";
 import { MemberItem } from "./components/member-item";
 import { SearchInput } from "./components/search-input";
+import { members } from "./data/index";
 
 export default function SettingsMembersPage() {
   return (
@@ -35,24 +36,9 @@ export default function SettingsMembersPage() {
                   <InviteButton />
                 </HStack>
                 <Stack w="100%" gap={8}>
-                  <MemberItem
-                    member={{
-                      id: "1",
-                      last_name: "Alink",
-                      first_name: "Renata",
-                      roles: ["owner", "admin"],
-                      email: "hello@saas-ui.dev",
-                    }}
-                  />
-                  <MemberItem
-                    member={{
-                      id: "2",
-                      first_name: "Davíð",
-                      last_name: "Ramos",
-                      email: "nonhlanhla.yoshida29@club-internet.info",
-                      roles: ["member"],
-                    }}
-                  />
+                  {members.map((m) => (
+                    <MemberItem key={m.id} member={m} />
+                  ))}
                 </Stack>
               </VStack>
             </CardBody>

@@ -17,6 +17,7 @@ import {
 } from "~/components/ui/menu";
 import { Text } from "~/components/ui/text";
 import { Member } from "~/types/index";
+import { ChangeRoleModal } from "./change-role-modal";
 import { RemoveMemberModal } from "./remove-member-modal";
 
 export const MemberItem = (props: { member: Member }) => {
@@ -24,7 +25,7 @@ export const MemberItem = (props: { member: Member }) => {
   const [openRemoveMemberModal, setOpenRemoveMemberModal] = useState(false);
 
   const { member } = props;
-  const { first_name, last_name, image, roles, email } = member;
+  const { first_name, last_name, image, role, email, is_owner } = member;
   const name = `${first_name} ${last_name}`;
 
   return (
@@ -36,16 +37,15 @@ export const MemberItem = (props: { member: Member }) => {
             <Text textStyle="sm" fontWeight="bold">
               {name}
             </Text>
-            <Text textStyle="sm" color="fg.muted">
+            <Text textStyle="sm" color="fg.subtle">
               {email}
             </Text>
           </Stack>
         </HStack>
         <HStack>
           <HStack>
-            {roles?.map((role) => (
-              <Badge key={role}>{role}</Badge>
-            ))}
+            {is_owner && <Badge key={role}>owner</Badge>}
+            <Badge key={role}>{role}</Badge>
           </HStack>
           <Menu>
             <MenuTrigger asChild>
@@ -71,7 +71,7 @@ export const MemberItem = (props: { member: Member }) => {
                   <MenuItem
                     textStyle="xs"
                     id="change-role"
-                    onClick={() => setOpenRemoveMemberModal(true)}
+                    onClick={() => setOpenChangeRoleModal(true)}
                   >
                     Change role
                   </MenuItem>
@@ -90,8 +90,16 @@ export const MemberItem = (props: { member: Member }) => {
       </Flex>
       {openRemoveMemberModal && (
         <RemoveMemberModal
+          member={member}
           open={openRemoveMemberModal}
           onOpenChange={(e: any) => setOpenRemoveMemberModal(e.open)}
+        />
+      )}
+      {openChangeRoleModal && (
+        <ChangeRoleModal
+          member={member}
+          open={openChangeRoleModal}
+          onOpenChange={(e: any) => setOpenChangeRoleModal(e.open)}
         />
       )}
     </>

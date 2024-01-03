@@ -4,5 +4,6 @@ export interface Member {
   last_name: string;
   first_name: string;
   image?: string | null;
-  roles?: string[];
+  role?: string;
+  is_owner?: boolean;
 }

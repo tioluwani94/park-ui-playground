@@ -9,14 +9,10 @@ import { Modal, ModalFooter } from "~/components/ui/modal";
 import * as TagsInput from "~/components/ui/tags-input";
 import * as Select from "~/components/ui/select";
 import { HStack } from "styled-system/jsx/hstack";
+import { roles } from "../data/index";
 
 export const InviteModal = (props: DialogProps & { children: ReactNode }) => {
   const { children, ...rest } = props;
-
-  const roles = [
-    { label: "Admin", value: "admin" },
-    { label: "Member", value: "member" },
-  ];
 
   return (
     <>
