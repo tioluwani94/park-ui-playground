@@ -37,13 +37,17 @@ export default function SettingsOrganizationPage() {
             <CardBody py={3}>
               <VStack w="100%" alignItems="flex-start">
                 <form action={handleSaveDetails} style={{ width: "inherit" }}>
-                  <VStack w="100%" gap={6} alignItems="flex-start">
+                  <VStack w="100%" gap={4} alignItems="flex-start">
                     <VStack gap={1} w="100%" alignItems="flex-start">
-                      <Label htmlFor="name">Organization name</Label>
+                      <Label textStyle="sm" htmlFor="name">
+                        Organization name
+                      </Label>
                       <Input size="sm" id="name" name="name" type="text" />
                     </VStack>
                     <VStack gap={1} w="100%" alignItems="flex-start">
-                      <Label htmlFor="email">Email address</Label>
+                      <Label textStyle="sm" htmlFor="email">
+                        Email address
+                      </Label>
                       <Input
                         size="sm"
                         disabled

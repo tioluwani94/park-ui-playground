@@ -55,9 +55,11 @@ export default function SettingsProfilePage() {
                   </FileUpload.Root>
                 </VStack>
                 <form action={handleSaveDetails} style={{ width: "inherit" }}>
-                  <VStack w="100%" gap={6} alignItems="flex-start">
+                  <VStack w="100%" gap={4} alignItems="flex-start">
                     <VStack gap={1} w="100%" alignItems="flex-start">
-                      <Label htmlFor="first_name">First name</Label>
+                      <Label textStyle="sm" htmlFor="first_name">
+                        First name
+                      </Label>
                       <Input
                         size="sm"
                         type="text"
@@ -66,7 +68,9 @@ export default function SettingsProfilePage() {
                       />
                     </VStack>
                     <VStack gap={1} w="100%" alignItems="flex-start">
-                      <Label htmlFor="last_name">Last name</Label>
+                      <Label textStyle="sm" htmlFor="last_name">
+                        Last name
+                      </Label>
                       <Input
                         size="sm"
                         type="text"
@@ -75,7 +79,9 @@ export default function SettingsProfilePage() {
                       />
                     </VStack>
                     <VStack gap={1} w="100%" alignItems="flex-start">
-                      <Label htmlFor="email">Email address</Label>
+                      <Label textStyle="sm" htmlFor="email">
+                        Email address
+                      </Label>
                       <Input
                         size="sm"
                         disabled
