@@ -4,6 +4,9 @@ import { Stack } from "styled-system/jsx/stack";
 import { VStack } from "styled-system/jsx/vstack";
 import * as Page from "~/components/settings/page";
 import { Card, CardBody } from "~/components/ui/card";
+import { InviteButton } from "./components/invite-button";
+import { MemberItem } from "./components/member-item";
+import { SearchInput } from "./components/search-input";
 
 export default function SettingsMembersPage() {
   return (
@@ -26,7 +29,16 @@ export default function SettingsMembersPage() {
         <HStack flex={1}>
           <Card width="100%">
             <CardBody py={3}>
-              <VStack w="100%" alignItems="flex-start"></VStack>
+              <VStack gap={6} w="100%" alignItems="flex-start">
+                <HStack w="100%">
+                  <SearchInput placeholder="Filter by name and email" />
+                  <InviteButton />
+                </HStack>
+                <Stack w="100%" gap={8}>
+                  <MemberItem />
+                  <MemberItem />
+                </Stack>
+              </VStack>
             </CardBody>
           </Card>
         </HStack>

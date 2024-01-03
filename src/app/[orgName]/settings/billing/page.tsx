@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import React from "react";
 import { HStack } from "styled-system/jsx/hstack";
 import { Stack } from "styled-system/jsx/stack";
@@ -10,6 +11,11 @@ import { Label } from "~/components/ui/label";
 import { Text } from "~/components/ui/text";
 
 const SettingsBillingPage = () => {
+  const handleViewPlans = async () => {
+    "use server";
+    redirect("/t/settings/plans");
+  };
+
   const handleSaveBillingEmailDetails = async () => {
     "use server";
   };
@@ -45,7 +51,11 @@ const SettingsBillingPage = () => {
                     You are currently on the <strong>Professional</strong> plan.
                   </Text>
                   <Text textStyle="sm">Your trial ends 1/15/2024.</Text>
-                  <Button size="xs">View plans and upgrade</Button>
+                  <form action={handleViewPlans}>
+                    <Button type="submit" size="xs">
+                      View plans and upgrade
+                    </Button>
+                  </form>
                 </VStack>
               </CardBody>
             </Card>
@@ -88,12 +98,7 @@ const SettingsBillingPage = () => {
             </Card>
           </HStack>
         </HStack>
-        <HStack
-          pb={20}
-          gap={10}
-          borderBottomWidth="1px"
-          alignItems="flex-start"
-        >
+        <HStack pb={20} gap={10} alignItems="flex-start">
           <Page.Header maxW="200px" w="100%">
             <Page.SectionTitle>Invoices</Page.SectionTitle>
             <Page.Description textStyle="sm" color="fg.subtle">
