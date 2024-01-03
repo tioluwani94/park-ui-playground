@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { css } from "styled-system/css";
 import { Container, Flex, HStack, Stack } from "styled-system/jsx";
-import * as Nav from "~/components/settings/nav";
+import * as Nav from "~/app/[orgName]/settings/components/nav";
 import { Icon } from "~/components/ui/alert";
 import { ColorModeButton } from "~/components/ui/color-mode-button";
 import { Heading } from "~/components/ui/heading";

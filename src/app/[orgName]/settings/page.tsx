@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, HStack, Stack, VStack } from "styled-system/jsx";
 import { Divider } from "styled-system/jsx/divider";
-import * as Page from "~/components/settings/page";
+import * as Page from "./components/page";
 import { Avatar } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import {

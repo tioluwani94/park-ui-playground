@@ -4,8 +4,8 @@ import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import { HStack, VStack, VstackProps } from "styled-system/jsx";
-import { Link, LinkProps } from "../ui/link";
-import { Text } from "../ui/text";
+import { Link, LinkProps } from "~/components/ui/link";
+import { Text } from "~/components/ui/text";
 
 const NavSection = (props: VstackProps) => (
   <VStack px={3} alignItems="flex-start" {...props} />

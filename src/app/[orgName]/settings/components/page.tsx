@@ -1,6 +1,6 @@
 import { Stack, StackProps } from "styled-system/jsx/stack";
-import { Heading, HeadingProps } from "../ui/heading";
-import { Text, TextProps } from "../ui/text";
+import { Heading, HeadingProps } from "~/components/ui/heading";
+import { Text, TextProps } from "~/components/ui/text";
 
 const PageHeader = (props: StackProps) => <Stack gap={1} {...props} />;
 

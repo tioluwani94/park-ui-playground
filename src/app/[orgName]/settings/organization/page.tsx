@@ -2,7 +2,7 @@ import React from "react";
 import { HStack } from "styled-system/jsx/hstack";
 import { Stack } from "styled-system/jsx/stack";
 import { VStack } from "styled-system/jsx/vstack";
-import * as Page from "~/components/settings/page";
+import * as Page from "../components/page";
 import { Button } from "~/components/ui/button";
 import { Card, CardBody } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
