@@ -11,12 +11,10 @@ import { members } from "./data/index";
 
 export default function SettingsMembersPage() {
   return (
-    <Stack gap={8}>
-      <Page.Header mb={10}>
-        <Page.Title as="h1" fontSize="2xl">
-          Members
-        </Page.Title>
-        <Page.Description textStyle="sm" color="fg.subtle">
+    <Page.Container>
+      <Page.Header>
+        <Page.Title>Members</Page.Title>
+        <Page.Description>
           Manage who can access your organization
         </Page.Description>
       </Page.Header>
@@ -37,6 +35,6 @@ export default function SettingsMembersPage() {
           </CardBody>
         </Card>
       </Page.Section>
-    </Stack>
+    </Page.Container>
   );
 }

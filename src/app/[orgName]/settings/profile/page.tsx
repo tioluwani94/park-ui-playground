@@ -1,5 +1,4 @@
 import React from "react";
-import { Stack } from "styled-system/jsx/stack";
 import { VStack } from "styled-system/jsx/vstack";
 import { Button } from "~/components/ui/button";
 import { Card, CardBody } from "~/components/ui/card";
@@ -16,14 +15,10 @@ export default function SettingsProfilePage() {
   };
 
   return (
-    <Stack gap={8}>
-      <Page.Header mb={10}>
-        <Page.Title as="h1" fontSize="2xl">
-          Profile
-        </Page.Title>
-        <Page.Description textStyle="sm" color="fg.subtle">
-          Manage your profile
-        </Page.Description>
+    <Page.Container>
+      <Page.Header>
+        <Page.Title>Profile</Page.Title>
+        <Page.Description>Manage your profile</Page.Description>
       </Page.Header>
       <Page.Section
         title="Basic details"
@@ -94,6 +89,6 @@ export default function SettingsProfilePage() {
           </CardBody>
         </Card>
       </Page.Section>
-    </Stack>
+    </Page.Container>
   );
 }

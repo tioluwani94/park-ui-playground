@@ -1,7 +1,6 @@
 import React from "react";
-import { Box, HStack, Stack, VStack } from "styled-system/jsx";
+import { Box, HStack, VStack } from "styled-system/jsx";
 import { Divider } from "styled-system/jsx/divider";
-import * as Page from "./components/page";
 import { Avatar } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import {
@@ -14,17 +13,14 @@ import {
 } from "~/components/ui/card";
 import { Icon } from "~/components/ui/icon";
 import { Text } from "~/components/ui/text";
+import * as Page from "./components/page";
 
 export default function SettingsOverviewPage() {
   return (
-    <Stack gap={8}>
-      <Page.Header mb={10}>
-        <Page.Title as="h1" fontSize="2xl">
-          Overview
-        </Page.Title>
-        <Page.Description textStyle="sm" color="fg.subtle">
-          Manage your organization settings
-        </Page.Description>
+    <Page.Container>
+      <Page.Header>
+        <Page.Title>Overview</Page.Title>
+        <Page.Description>Manage your organization settings</Page.Description>
       </Page.Header>
       <VStack gap={6} alignItems="flex-start">
         <Page.SectionTitle>Organization settings</Page.SectionTitle>
@@ -158,6 +154,6 @@ export default function SettingsOverviewPage() {
           </Card>
         </HStack>
       </VStack>
-    </Stack>
+    </Page.Container>
   );
 }

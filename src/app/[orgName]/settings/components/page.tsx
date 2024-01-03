@@ -39,10 +39,13 @@ const PageSection = ({
   </HStack>
 );
 
+const PageContainer = (props: StackProps) => <Stack gap={16} {...props} />;
+
 const Title = PageTitle;
 const Header = PageHeader;
 const Section = PageSection;
+const Container = PageContainer;
 const Description = PageDescription;
 const SectionTitle = PageSectionTitle;
 
-export { Title, Header, Description, Section, SectionTitle };
+export { Title, Header, Description, Section, Container, SectionTitle };

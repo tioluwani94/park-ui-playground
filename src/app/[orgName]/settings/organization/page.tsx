@@ -1,5 +1,4 @@
 import React from "react";
-import { Stack } from "styled-system/jsx/stack";
 import { VStack } from "styled-system/jsx/vstack";
 import { Button } from "~/components/ui/button";
 import { Card, CardBody } from "~/components/ui/card";
@@ -15,14 +14,10 @@ export default function SettingsOrganizationPage() {
   };
 
   return (
-    <Stack gap={8}>
-      <Page.Header mb={10}>
-        <Page.Title as="h1" fontSize="2xl">
-          Organization
-        </Page.Title>
-        <Page.Description textStyle="sm" color="fg.subtle">
-          Manage your organization settings
-        </Page.Description>
+    <Page.Container>
+      <Page.Header>
+        <Page.Title>Organization</Page.Title>
+        <Page.Description>Manage your organization settings</Page.Description>
       </Page.Header>
       <Page.Section
         title="Organization details"
@@ -60,6 +55,6 @@ export default function SettingsOrganizationPage() {
           </CardBody>
         </Card>
       </Page.Section>
-    </Stack>
+    </Page.Container>
   );
 }
