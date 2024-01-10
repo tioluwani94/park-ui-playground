@@ -27,7 +27,7 @@ const SettingsPlansPage = () => {
                       <Text textStyle="xs" fontWeight={500}>
                         Billing period
                       </Text>
-                      <ToggleGroup.Root size="sm">
+                      <ToggleGroup.Root size="sm" defaultValue={["monthly"]}>
                         <ToggleGroup.Item
                           px="3"
                           value="monthly"
