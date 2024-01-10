@@ -61,7 +61,7 @@ const SettingsBillingPage = () => {
                     <Label textStyle="sm" htmlFor="email">
                       Email address
                     </Label>
-                    <Input size="sm" id="email" name="email" type="email" />
+                    <Input size="xs" id="email" name="email" type="email" />
                   </VStack>
                   <Button size="xs" type="submit">
                     Save

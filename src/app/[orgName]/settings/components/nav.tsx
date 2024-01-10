@@ -46,9 +46,10 @@ const NavListItem = (props: Omit<LinkProps, "href"> & NextLinkProps) => {
       asChild
       w="100%"
       rounded={4}
-      textStyle="sm"
+      textStyle="xs"
       fontWeight="normal"
       textDecoration="none"
+      transition="background 0.4s ease"
       _hover={{
         bg: "colorPalette.a3",
       }}

@@ -39,7 +39,7 @@ export default function SettingsOrganizationPage() {
                       Email address
                     </Label>
                     <Input
-                      size="sm"
+                      size="xs"
                       disabled
                       id="email"
                       name="email"

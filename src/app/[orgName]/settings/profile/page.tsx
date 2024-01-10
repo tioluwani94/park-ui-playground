@@ -51,7 +51,7 @@ export default function SettingsProfilePage() {
                       First name
                     </Label>
                     <Input
-                      size="sm"
+                      size="xs"
                       type="text"
                       id="first_name"
                       name="first_name"
@@ -62,7 +62,7 @@ export default function SettingsProfilePage() {
                       Last name
                     </Label>
                     <Input
-                      size="sm"
+                      size="xs"
                       type="text"
                       id="last_name"
                       name="last_name"
@@ -73,7 +73,7 @@ export default function SettingsProfilePage() {
                       Email address
                     </Label>
                     <Input
-                      size="sm"
+                      size="xs"
                       disabled
                       id="email"
                       name="email"
