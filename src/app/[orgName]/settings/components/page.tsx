@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { HStack, HstackProps } from "styled-system/jsx/hstack";
+import { HStack } from "styled-system/jsx/hstack";
 import { Stack, StackProps } from "styled-system/jsx/stack";
 import { Heading, HeadingProps } from "~/components/ui/heading";
 import { Text, TextProps } from "~/components/ui/text";
@@ -27,16 +27,23 @@ const PageSection = ({
   title: string;
   description: string;
   children: ReactNode;
-} & HstackProps) => (
-  <HStack gap={10} alignItems="flex-start" {...rest}>
-    <Header maxW="200px" w="100%">
+} & StackProps) => (
+  <Stack
+    gap={10}
+    alignItems="flex-start"
+    direction={["column", "column", "row"]}
+    {...rest}
+  >
+    <Header w="full" maxW={["unset", "unset", "200px"]}>
       <SectionTitle>{title}</SectionTitle>
       <Description textStyle="sm" color="fg.subtle">
         {description}
       </Description>
     </Header>
-    <HStack flex={1}>{children}</HStack>
-  </HStack>
+    <HStack w="full" flex={1}>
+      {children}
+    </HStack>
+  </Stack>
 );
 
 const PageContainer = (props: StackProps) => <Stack gap={16} {...props} />;

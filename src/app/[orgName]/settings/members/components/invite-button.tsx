@@ -8,7 +8,11 @@ export const InviteButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <InviteModal open={isOpen} onOpenChange={(e: any) => setIsOpen(e.open)}>
-      <Button size="xs" onClick={() => setIsOpen(true)}>
+      <Button
+        size="xs"
+        w={["full", "auto", "auto"]}
+        onClick={() => setIsOpen(true)}
+      >
         Invite people
       </Button>
     </InviteModal>

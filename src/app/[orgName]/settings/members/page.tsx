@@ -1,5 +1,4 @@
 import React from "react";
-import { HStack } from "styled-system/jsx/hstack";
 import { Stack } from "styled-system/jsx/stack";
 import { VStack } from "styled-system/jsx/vstack";
 import { Card, CardBody } from "~/components/ui/card";
@@ -22,10 +21,10 @@ export default function SettingsMembersPage() {
         <Card width="100%">
           <CardBody py={3}>
             <VStack gap={6} w="100%" alignItems="flex-start">
-              <HStack w="100%">
+              <Stack w="100%" direction={["column", "row", "row"]}>
                 <SearchInput placeholder="Filter by name and email" />
                 <InviteButton />
-              </HStack>
+              </Stack>
               <Stack w="100%" gap={8}>
                 {members.map((m) => (
                   <MemberItem key={m.id} member={m} />

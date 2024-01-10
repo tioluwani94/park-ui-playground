@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack, VStack } from "styled-system/jsx";
+import { Box, HStack, Stack, VStack } from "styled-system/jsx";
 import { Divider } from "styled-system/jsx/divider";
 import { Avatar } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
@@ -24,7 +24,7 @@ export default function SettingsOverviewPage() {
       </Page.Header>
       <VStack gap={6} alignItems="flex-start">
         <Page.SectionTitle>Organization settings</Page.SectionTitle>
-        <HStack gap={8} w="100%">
+        <Stack gap={8} w="100%" direction={["column", "column", "row"]}>
           <Card width="100%">
             <CardHeader py={3} borderBottomWidth="1px" flex={1}>
               <HStack w="100%">
@@ -78,9 +78,7 @@ export default function SettingsOverviewPage() {
                 <Avatar />
                 <Box>
                   <CardTitle>Organization</CardTitle>
-                  <CardDescription>
-                    Manage your organization details.
-                  </CardDescription>
+                  <CardDescription>Manage your organization.</CardDescription>
                 </Box>
               </HStack>
             </CardHeader>
@@ -108,7 +106,7 @@ export default function SettingsOverviewPage() {
               </HStack>
             </CardFooter>
           </Card>
-        </HStack>
+        </Stack>
       </VStack>
 
       <Divider />

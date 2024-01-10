@@ -37,15 +37,19 @@ export const MemberItem = (props: { member: Member }) => {
             <Text textStyle="sm" fontWeight="bold">
               {name}
             </Text>
-            <Text textStyle="sm" color="fg.subtle">
+            <Text
+              textStyle="sm"
+              color="fg.subtle"
+              display={["none", "block", "block"]}
+            >
               {email}
             </Text>
           </Stack>
         </HStack>
         <HStack>
-          <HStack>
+          <HStack display={["none", "flex", "flex"]}>
             {is_owner && <Badge key={role}>owner</Badge>}
-            <Badge key={role}>{role}</Badge>
+            <Badge>{role}</Badge>
           </HStack>
           <Menu>
             <MenuTrigger asChild>
