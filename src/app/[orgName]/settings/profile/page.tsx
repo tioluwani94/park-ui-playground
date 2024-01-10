@@ -28,7 +28,9 @@ export default function SettingsProfilePage() {
           <CardBody py={3}>
             <VStack w="100%" alignItems="flex-start">
               <VStack w="100%" alignItems="flex-start">
-                <Label htmlFor="profile_image">Profile image</Label>
+                <Label textStyle="sm" htmlFor="profile_image">
+                  Profile image
+                </Label>
                 <FileUpload.Root
                   id="profile_image"
                   maxFiles={1}

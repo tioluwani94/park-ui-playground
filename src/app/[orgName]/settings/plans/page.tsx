@@ -6,6 +6,7 @@ import { Text } from "~/components/ui/text";
 import { Button } from "~/components/ui/button";
 import * as ToggleGroup from "~/components/ui/toggle-group";
 import { Heading } from "~/components/ui/heading";
+import { Icon } from "~/components/ui/icon";
 
 const SettingsPlansPage = () => {
   return (
@@ -21,22 +22,24 @@ const SettingsPlansPage = () => {
           <Box>
             <Table.Root>
               <Table.Head>
-                <Table.Row borderBottomWidth={0}>
-                  <Table.Cell px={6} py={4} rowSpan={2} verticalAlign="bottom">
+                <Table.Row _hover={{ bg: "transparent" }} borderBottomWidth={0}>
+                  <Table.Cell px={6} py={3} rowSpan={2} verticalAlign="bottom">
                     <Stack align="flex-start">
-                      <Text textStyle="xs" fontWeight={500}>
+                      <Text textStyle="sm" fontWeight={500}>
                         Billing period
                       </Text>
                       <ToggleGroup.Root size="sm" defaultValue={["monthly"]}>
                         <ToggleGroup.Item
-                          px="3"
+                          h={8}
+                          px={3}
                           value="monthly"
                           aria-label="Toggle monthly"
                         >
                           Pay monthly
                         </ToggleGroup.Item>
                         <ToggleGroup.Item
-                          px="3"
+                          h={8}
+                          px={3}
                           value="yearly"
                           aria-label="Toggle yearly"
                         >
@@ -48,19 +51,19 @@ const SettingsPlansPage = () => {
                   <Table.Header py={3} px={6}>
                     <Stack>
                       <Heading fontWeight="semibold">Professional</Heading>
-                      <Text textStyle="xs">Perfect for small teams.</Text>
+                      <Text textStyle="sm">Perfect for small teams.</Text>
                     </Stack>
                   </Table.Header>
                   <Table.Header py={3} px={6}>
                     <Stack>
                       <Heading fontWeight="semibold">Enterprise</Heading>
-                      <Text textStyle="xs">
+                      <Text textStyle="sm">
                         Complete package for growing teams.
                       </Text>
                     </Stack>
                   </Table.Header>
                 </Table.Row>
-                <Table.Row>
+                <Table.Row _hover={{ bg: "transparent" }}>
                   <Table.Header py={3} px={6}>
                     <Stack>
                       <Stack direction="row" align="center">
@@ -84,15 +87,182 @@ const SettingsPlansPage = () => {
                 </Table.Row>
               </Table.Head>
               <Table.Body>
-                <Table.Row>
-                  <Table.Cell px={6}>Users</Table.Cell>
-                  <Table.Cell px={6}>Max 3</Table.Cell>
-                  <Table.Cell px={6}>Unlimited</Table.Cell>
+                <Table.Row textStyle="sm">
+                  <Table.Cell px={6}>
+                    <Text fontWeight={500}>Users</Text>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                      <Text fontWeight={500}>Max 3</Text>
+                    </Stack>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                      <Text fontWeight={500}>Unlimited</Text>
+                    </Stack>
+                  </Table.Cell>
                 </Table.Row>
-                <Table.Row>
-                  <Table.Cell px={6}>Inbox</Table.Cell>
-                  <Table.Cell px={6}>Max 3</Table.Cell>
-                  <Table.Cell px={6}>Unlimited</Table.Cell>
+
+                <Table.Row textStyle="sm">
+                  <Table.Cell px={6}>
+                    <Text fontWeight={500}>Inbox</Text>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                    </Stack>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                    </Stack>
+                  </Table.Cell>
+                </Table.Row>
+
+                <Table.Row textStyle="sm">
+                  <Table.Cell px={6}>
+                    <Text fontWeight={500}>Contacts</Text>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                    </Stack>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                    </Stack>
+                  </Table.Cell>
+                </Table.Row>
+
+                <Table.Row textStyle="sm">
+                  <Table.Cell px={6}>
+                    <Text fontWeight={500}>Support</Text>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                    </Stack>
+                  </Table.Cell>
+                  <Table.Cell px={6}>
+                    <Stack gap={1} direction="row" align="center">
+                      <Icon css={{ w: 4, h: 4, color: "purple.8" }}>
+                        <svg
+                          fill="none"
+                          strokeWidth={1.5}
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 12.75 6 6 9-13.5"
+                          />
+                        </svg>
+                      </Icon>
+                    </Stack>
+                  </Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table.Root>
